@@ -126,7 +126,9 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
 
 大家也可以使用arc函数构建圆配上不同的颜色，就可以实现下面的[效果](https://swnb.github.io/canvas_study/demo/point.html)了。
 
-未完待续
+我们再来看一个复杂的例子
+
+实现下面的动画
 
 我写了一个项目，可以上传视频，在线看视频。而且大量特效都是基于svg和canvas的，所以，有兴趣的同学可以[看一下](https://github.com/swnb/video)嘛，给个star，谢谢了。
 
