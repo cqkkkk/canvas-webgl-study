@@ -130,7 +130,22 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
 
 实现下面的[动画](https://swnb.github.io/canvas_study/demo/star.html)
 
+这个动画有五角星和雪瓣，我们主要介绍下4角星怎么实现，简单来说，就是使用line连接起来，然后再fill就完成了。我们看看怎么实现吧，首先，你要生成一个基本点属性`position`
+```javascript
+class star{
+    constructor(){
+        this.position = {
+            x: (Math.random() * 0.8 + 0.1) * w,
+            y: (Math.random() * 0.8 + 0.1) * h
+        };
+    }
+}
+```
+其次，你需要根据这个基本点去绘制这个星的几个边角，数学问题，直接给答案了，自己研究下就知道了
 
+```javascript
+
+```
 
 我写了一个项目，可以上传视频，在线看视频。而且大量特效都是基于svg和canvas的，所以，有兴趣的同学可以[看一下](https://github.com/swnb/video)嘛，给个star，谢谢了。
 
