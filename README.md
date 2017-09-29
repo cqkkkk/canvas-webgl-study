@@ -97,7 +97,7 @@ run();
 
 我们看到效果并不好，为什么？因为我们每次更新到画布的过程没有清除先前绘制的矩形，所有没有达到我们想要的效果，只要求一个矩形，怎么办？，我们只需要每次绘制画布前清除画布就好了。使用`ctx.clearRect(0,0,w,h)` 从（0,0）到（w，h）清除画布，还要重新开始路径`ctx.beginPath()`让画布重新开始路径，[效果在这里](https://swnb.github.io/canvas_study/demo/canvas.1.1.html)代码更改为[代码](./canvas/canvas1.1.js)
 
-但是上面的方法并不好，因为效率很低，如果屏幕过大，那么会影响效率，我们只需要清空原先的图形就好了，但是对于较大的画布，那么就需要全部清空了。怎么只清空一部分呢？（待续）
+但是上面的方法并不好，因为效率很低，如果屏幕过大，那么会影响效率，我们只需要清空原先的图形就好了，但是对于较大的画布，那么就需要全部清空了。怎么只清空一部分呢？(待完成)
 
 这时候我们就可以看到一个矩形在窗口移动了，但是它会移动到窗口外啊，怎么办呢?一个方法限制他的运动范围，让他每次遇到边界速度反向，就像一个弹性球体一样，来动手实现这个函数吧.
 
@@ -130,22 +130,38 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
 
 实现下面的[动画](https://swnb.github.io/canvas_study/demo/star.html)
 
-这个动画有五角星和雪瓣，我们主要介绍下4角星怎么实现，简单来说，就是使用line连接起来，然后再fill就完成了。我们看看怎么实现吧，首先，你要生成一个基本点属性`position`
+这个动画有五角星和雪瓣，我们主要介绍下4角星怎么实现，简单来说，就是使用line连接起来，然后再fill就完成了。我们看看怎么实现吧，首先，你要生成一个基本点属性`position`,这个属性包括了三角形的中心点
+
 ```javascript
 class star{
     constructor(){
-        this.position = {
-            x: (Math.random() * 0.8 + 0.1) * w,
-            y: (Math.random() * 0.8 + 0.1) * h
-        };
+        this.x=(Math.random() * 0.8 + 0.1) * w,
+        this.y= (Math.random() * 0.8 + 0.1) * h
+        this.r=(Math.random()*2+13)
     }
 }
 ```
-其次，你需要根据这个基本点去绘制这个星的几个边角，数学问题，直接给答案了，自己研究下就知道了
+其次，你需要根据这个基本点去绘制这个星的几个边角，数学问题，直接给答案了.
 
 ```javascript
-    //明天填，今天太累了
+    ctx.save();
+    ctx.translate(this.x + this.r, this.y);
+    ctx.beginPath();
+    ctx.moveTo(0, -this.r);
+    ctx.lineTo(this.r / 4, -this.r / 4);
+    ctx.lineTo(this.r, 0);
+    ctx.lineTo(this.r / 4, this.r / 4);
+    ctx.lineTo(0, this.r);
+    ctx.lineTo(-this.r / 4, this.r / 4);
+    ctx.lineTo(-this.r, 0);
+    ctx.lineTo(-this.r / 4, -this.r / 4);
+    ctx.fill();
+    ctx.closePath();
+    ctx.restore();
 ```
+解释一下，这里的save()表示保存画布信息，之后我们将画布的原点移动到我们的三角形原点右边，注意是右边的位置，因为我要从这个点开始连线，而不是从中心点，之后就是一些数学问题，连线，连线，然后填充，就好了，上面的只是核心代码。
+实现一个4角星的代码在[这里](),[效果这里]()
+
 
 我写了一个项目，可以上传视频，在线看视频。而且大量特效都是基于svg和canvas的，所以，有兴趣的同学可以[看一下](https://github.com/swnb/video)嘛，给个star，谢谢了。
 
