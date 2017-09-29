@@ -75,7 +75,7 @@ const outlook=new T.MeshBasicMaterial({ //颜色是 0xf0f0f1，模糊程度是0.
       opacity: 0.77
     })
 //绘制成一个物体
-const Object=new T.Mesh(cube,outlook);
+const object=new T.Mesh(cube,outlook);
 ```
 我们整合一下代码，看看整个的流程
 
@@ -111,13 +111,18 @@ renderer.render(scene,camera)
 
 ```javascript
 function draw() {
+    //旋转物体
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+    //渲染
     renderer.render(scene, camera);
+    //根据浏览器的渲染周期来渲染
     requestAnimationFrame(draw);
 }
 ```
-[整体的代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/webgl_js/template.js),[效果在这里](https://swnb.github.io/canvas_study/demo/webgl.html)
+[整体的代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/webgl_js/template.js)
+
+[效果在这里](https://swnb.github.io/canvas_study/demo/webgl.html)
 
 这里我写了一个大致模板给大家看一下整体的流程，方便理解
 
