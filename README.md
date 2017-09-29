@@ -4,6 +4,8 @@
 
 喜欢的请star一下，谢谢
 
+> 有人说不想看2d的，想看webgl，现在正在写。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)是小儿科的话，那么就直接[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
+
 首先我们在html里面创建`<canvas></canvas>`标签，需要注意的是，width和height都是canvas的dom属性，不要在css上写
 
 然后就是js代码
@@ -143,25 +145,28 @@ class star{
 ```
 其次，你需要根据这个基本点去绘制这个星的几个边角，数学问题，直接给答案了.
 
-```javascript
-    ctx.save();
-    ctx.translate(this.x + this.r, this.y);
-    ctx.beginPath();
-    ctx.moveTo(0, -this.r);
-    ctx.lineTo(this.r / 4, -this.r / 4);
-    ctx.lineTo(this.r, 0);
-    ctx.lineTo(this.r / 4, this.r / 4);
-    ctx.lineTo(0, this.r);
-    ctx.lineTo(-this.r / 4, this.r / 4);
-    ctx.lineTo(-this.r, 0);
-    ctx.lineTo(-this.r / 4, -this.r / 4);
-    ctx.fill();
-    ctx.closePath();
-    ctx.restore();
+```javascript            
+            ctx.fillStyle = 'red';
+            ctx.translate(this.x + this.r, this.y);
+            ctx.beginPath();
+            ctx.moveTo(0, -this.r);
+            ctx.lineTo(this.r / 4, -this.r / 4);
+            ctx.lineTo(this.r, 0);
+            ctx.lineTo(this.r / 4, this.r / 4);
+            ctx.lineTo(0, this.r);
+            ctx.lineTo(-this.r / 4, this.r / 4);
+            ctx.lineTo(-this.r, 0);
+            ctx.lineTo(-this.r / 4, -this.r / 4);
+            ctx.fill();
+            ctx.closePath();
 ```
-解释一下，这里的save()表示保存画布信息，之后我们将画布的原点移动到我们的三角形原点右边，注意是右边的位置，因为我要从这个点开始连线，而不是从中心点，之后就是一些数学问题，连线，连线，然后填充，就好了，上面的只是核心代码。
-实现一个4角星的代码在[这里](),[效果这里]()
+解释一下,我们将画布的原点移动到我们的三角形原点右边的那个点，注意是右边的位置，因为我要从这个点开始连线，之后就是一些数学问题，连线，连线，自己分析一下就知道了。然后填充，就好了，上面的只是核心代码。
 
+实现一个4角星的代码在[这里](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/starSigel.js),[效果这里](https://swnb.github.io/canvas_study/demo/starSigel.html)
+
+我就不再详细介绍这个[动画](https://swnb.github.io/canvas_study/demo/star.html)怎么实现了，喜欢的朋友可以去这里看我写的[源代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/star.js)，我给了非常详细的注释，如果看不懂，可以提个issues,我会专门去详细的介绍怎么实现这个[动画](https://swnb.github.io/canvas_study/demo/star.html)。
+
+后面我回介绍webgl和css3的动画，希望大家喜欢，有不对的地方也希望大家给我提出来
 
 我写了一个项目，可以上传视频，在线看视频。而且大量特效都是基于svg和canvas的，所以，有兴趣的同学可以[看一下](https://github.com/swnb/video)嘛，给个star，谢谢了。
 
