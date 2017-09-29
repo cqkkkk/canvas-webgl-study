@@ -102,11 +102,9 @@ scene.add(cube);
 //渲染场景
 renderer.render(scene,camera)
 ```
-上面的代码啥都看不见，为啥，因为我们需要设置相机的位置，将相机的位置向后面移动一下，在`renderer.render()之前加上camera.position.z=10`，这样就可以了。。
+上面的代码啥都看不见，为啥，因为我们需要设置相机的位置，将相机的位置向后面移动一下，在`renderer.render()之前加上camera.position.z=10`，这样就可以了出现物体了。。
 
-效果在[这里](),代码在[这里]()
-
-但是这个根本不出是3d的啊，我们调整物体的位子，让他转动起来，代码如下
+但是这个根本看不出是3d的啊，我们调整物体的位子，让他转动起来，代码如下
 
 ```javascript
 function draw() {
@@ -116,7 +114,7 @@ function draw() {
     requestAnimationFrame(draw);
 }
 ```
-[整体的代码](),[效果在这里]()
+[整体的代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/webgl_js/template.js),[效果在这里](https://swnb.github.io/canvas_study/demo/webgl.html)
 
 这里我写了一个大致模板给大家看一下整体的流程，方便理解
 
@@ -168,3 +166,5 @@ let render = run();
 render();
 
 ```
+
+这就是大致的webgl构建应用的思路了，未完待续。。。。
