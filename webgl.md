@@ -5,7 +5,8 @@
 ### 使用什么环境学习呢？
 
 我推荐使用webpack，有了热加载可以更好的测试，还可以使用es6语法，当然，你也可以script引入three.js，
-如果你不会使用webpack，没关系。我这里有一个模板，给你使用。你只需要。里面的`wepack插件`是我自己写的，功能很简单，所以请不要修改它，如果需要学习webpack，请去官网。
+如果你不会使用webpack，没关系。我这里有一个模板，给你使用。你只需要[下载它，然后按照说明写入你的代码，然后运行就可以了](https://github.com/swnb/canvas_study/tree/webpack-template)。
+里面的`webpack插件`是我自己写的，功能很简单，所以请不要修改它，如果需要学习webpack，请去官网。
 
 ### three.js的3个要点
 请默默读几遍
