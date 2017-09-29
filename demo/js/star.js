@@ -84,13 +84,13 @@
         this.y += this.vy * this.spead;
     }
 
-    //矩形元素
+    //花瓣元素
     let rect = function() {};
 
-    //三角形
+    //4角形
     let tri = function() {};
 
-    //矩形原型链
+    //花瓣原型链
     rect.prototype = {
         init: function(x, y, r) {
             this.r = r;
