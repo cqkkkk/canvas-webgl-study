@@ -1,15 +1,21 @@
 {
-  "name": "canvas_study",
-  "version": "1.0.0",
-  "description": "this is a template for three.js study",
-  "main": "index.js",
-  "repository": "https://github.com/swnb/canvas_study.git",
-  "author": "swnb <1786718956@qq.com>",
-  "license": "MIT",
-  "dependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "three.js": "^0.77.1",
-    "webpack": "^3.6.0"
-  }
+    "name": "canvas_study",
+    "version": "1.0.0",
+    "description": "this is a template for three.js study",
+    "main": "index.js",
+    "repository": "https://github.com/swnb/canvas_study.git",
+    "author": "swnb <1786718956@qq.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "webpack-dev-server  --open"
+    },
+    "dependencies": {
+        "babel": "^6.23.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-es2015": "^6.24.1",
+        "three.js": "^0.77.1",
+        "webpack": "^3.6.0"
+    }
 }

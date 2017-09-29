@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const Myplugin = require('./plugin/plugin');
 module.exports = {
     entry: {
         index: path.join(__dirname, 'index.js')
@@ -6,6 +8,10 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].js'
+    },
+    devServer: {
+        contentBase: './dist',
+        port: 8000
     },
     module: {
         rules: [
@@ -20,5 +26,6 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [new Myplugin()]
 };
