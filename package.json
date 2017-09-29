@@ -1,0 +1,15 @@
+{
+  "name": "canvas_study",
+  "version": "1.0.0",
+  "description": "this is a template for three.js study",
+  "main": "index.js",
+  "repository": "https://github.com/swnb/canvas_study.git",
+  "author": "swnb <1786718956@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "three.js": "^0.77.1",
+    "webpack": "^3.6.0"
+  }
+}
