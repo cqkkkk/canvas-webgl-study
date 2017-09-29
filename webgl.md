@@ -4,7 +4,8 @@
 
 ### 使用什么环境学习呢？
 
-我推荐使用webpack，有了热加载可以更好的测试，还可以使用es6语法，当然，你也可以script引入three.js
+我推荐使用webpack，有了热加载可以更好的测试，还可以使用es6语法，当然，你也可以script引入three.js，
+如果你不会使用webpack，没关系。我这里有一个模板，给你使用。你只需要。里面的`wepack插件`是我自己写的，功能很简单，所以请不要修改它，如果需要学习webpack，请去官网。
 
 ### three.js的3个要点
 请默默读几遍
@@ -56,5 +57,104 @@ render有一个domElemet属性，这个属性可以让它被渲染到网页页�
 
 `renderer.render(scene,camera)`
 
+***
+上面简单介绍了3个要点的用法，这里介绍怎么创建物体，我们来为场景添加物体。
 
+先创建一个长方形
 
+```javascript
+// 创建一个矩形
+const cube=new T.CubeGeometry(2, 2, 2) // 参数就是x,y,z
+//创建矩形的颜色
+const outlook=new T.MeshBasicMaterial({ //颜色是 0xf0f0f1，模糊程度是0.7
+      color: 0xf0f0f1,
+      opacity: 0.77
+    })
+//绘制成一个物体
+const Object=new T.Mesh(cube,outlook);
+```
+我们整合一下代码，看看整个的流程
+
+```javascript
+import * as T from "three";
+//获取窗口大小
+let [w, h] = [window.innerWidth, window.innerHeight];
+//场景创建
+const scene = new T.Scene();
+//相机
+const camera = new T.PerspectiveCamera(60, w / h, 0.1, 1000);
+//渲染
+const renderer = new T.WebGLRenderer();
+renderer.setSize(w, h);
+document.body.appendChild(renderer.domElement);
+
+//创建物体
+const cube = new T.Mesh(
+  new T.CubeGeometry(1, 2, 3),
+  new T.MeshBasicMaterial({
+    color: 0xff00ff,
+    opacity: 0.75
+  })
+);
+//添加物体
+scene.add(cube);
+//渲染场景
+renderer.render(scene,camera)
+```
+上面的代码啥都看不见，为啥，因为我们需要设置相机的位置，将相机的位置向后面移动一下，在`renderer.render()之前加上camera.position.z=10`，这样就可以了。。
+
+效果在[这里](),代码在[这里]()
+
+但是这个根本不出是3d的啊，我们调整相机的位子，让他四处扫视一下，代码如下`object.rotation.x += x_change;object.rotation.y += y_change;`
+[整体的代码](),[效果在这里]()
+
+这里我写了一个大致模板给大家看一下整体的流程，方便理解
+
+```javascript
+import * as T from "three";
+
+function init(tag = document.body) {
+  let [w, h] = [window.innerWidth, window.innerHeight];
+  const scene = new T.Scene();
+  const camera = new T.PerspectiveCamera(75, w / h, 0.1, 1000);
+  const renderer = new T.WebGLRenderer();
+  renderer.setSize(w, h);
+  tag.appendChild(renderer.domElement);
+  return {
+    scene,
+    camera,
+    renderer
+  };
+}
+
+function createObject() {
+    //在这里创建物体
+  const object = new T.Mesh(
+    new T.CubeGeometry(2, 2, 2),
+    new T.MeshBasicMaterial({
+      color: 0xf0f0f1,
+      opacity: 0.77
+    })
+  );
+  return object;
+}
+
+function run() {
+  const { scene, camera, renderer } = init();
+  const object = createObject();
+  scene.add(object);
+  camera.position.z = 7;
+  function draw() {
+    object.rotation.x += 0.01;
+    object.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    requestAnimationFrame(draw);
+  }
+  return draw;
+}
+
+let render = run();
+
+render();
+
+```

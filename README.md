@@ -4,7 +4,9 @@
 
 喜欢的请star一下，谢谢
 
-> 有人说不想看2d的，想看webgl，现在正在写。。。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)是小儿科的话，那么就直接[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
+> 有人说不想看2d的，想看webgl，现在正在写。。。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)很简单的话，那么就直接看[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
+
+***
 
 首先我们在html里面创建`<canvas></canvas>`标签，需要注意的是，width和height都是canvas的dom属性，不要在css上写
 
