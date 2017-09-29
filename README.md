@@ -20,4 +20,6 @@ cd canvas_study
   yarn run dev
 ```
 
+如果没有浏览器打开，那么就需要自己打开[链接](http://localhost:8000/)
+
 详细在[这里](https://github.com/swnb/canvas_study/blob/master/webgl.md)
