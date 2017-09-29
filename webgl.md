@@ -4,12 +4,12 @@
 
 ### 使用什么环境学习呢？
 
-我推荐使用webpack，有了热加载可以更好的测试，还可以使用es6语法，当然，你也可以script引入three.js，
-如果你不会使用webpack，没关系。我这里有一个模板，给你使用。你只需要[下载它，然后按照说明写入你的代码，然后运行就可以了](https://github.com/swnb/canvas_study/tree/webpack-template)。
+我推荐使用webpack，有了热加载可以更好的测试，还可以使用es6语法，当然，你也可以script引入three.js(不推荐)，
+如果你不会使用webpack，没关系，我写了一个模板给你使用，用法非常简单，你只需要[点击这里](https://github.com/swnb/canvas_study/tree/webpack-template)然后按照步骤来就好了。
 里面的`webpack插件`是我自己写的，功能很简单，所以请不要修改它，如果需要学习webpack，请去官网。
 
 ### three.js的3个要点
-请默默读几遍
+请记住下面这3点
 
 * 场景
 * 相机
@@ -22,23 +22,26 @@
 ```shell
     yarn add three.js
 ```
+
 引入three.js
 ```javascript
 import * as T from 'three'
 ```
+***
+## 开始3个要素的介绍
 ### 创建场景
 ```javascript
 const scene=new T.Scene();
 ```
 ### 创建相机
 
-相机也分正交相机和透视投影，可以简单认为，透视投影照相机获得的结果是类似人眼在真实世界中看到的效果（近大远小）。所以对于制图，建模软件通常使用正交投影，这样不会因为投影而改变物体比例。而对于其他大多数应用，通常使用透视投影，因为这更接近人眼的观察效果。
+> 相机也分正交相机和透视投影，可以简单认为，透视投影照相机获得的结果是类似人眼在真实世界中看到的效果（近大远小）。所以对于制图，建模软件通常使用正交投影，这样不会因为投影而改变物体比例。而对于其他大多数应用，通常使用透视投影，因为这更接近人眼的观察效果。
 
 这里使用的是透视相机。
 ```javascript
 const camera = new T.PerspectiveCamera(60, w / h, 0.1, 1000);
 ```
-简单介绍下参数 第一个参数是视景体竖直方向上的张角（是角度制而非弧度制）,这里设置成60度，第二个参数是宽长比例，简单说，如果是全屏，那么`w`是`window.innerWidth`,`h`就是`window.innerHeight`,第三个参数和第4个参数是相机到视景体最近、最远的距离，可能说的不是很清楚，见谅。
+> 简单介绍下参数 第一个参数是视景体竖直方向上的张角（是角度制而非弧度制）,这里设置成60度，第二个参数是宽长比例，简单说，如果是全屏，那么`w`是`window.innerWidth`,`h`就是`window.innerHeight`,第三个参数和第4个参数是相机到视景体最近、最远的距离，可能说的不是很清楚，见谅。
 
 ### 渲染
 渲染也有不同的渲染方式，这里选择是`WebGLRenderer`
@@ -46,7 +49,7 @@ const camera = new T.PerspectiveCamera(60, w / h, 0.1, 1000);
 ```javascript
 const renderer=new T.WebGLRenderer();
 ```
-设置渲染的大小
+设置渲染的大小(场和宽)
 
 `renderer.setSize(w,h)`
 
