@@ -106,7 +106,16 @@ renderer.render(scene,camera)
 
 效果在[这里](),代码在[这里]()
 
-但是这个根本不出是3d的啊，我们调整相机的位子，让他四处扫视一下，代码如下`object.rotation.x += x_change;object.rotation.y += y_change;`
+但是这个根本不出是3d的啊，我们调整物体的位子，让他转动起来，代码如下
+
+```javascript
+function draw() {
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    requestAnimationFrame(draw);
+}
+```
 [整体的代码](),[效果在这里]()
 
 这里我写了一个大致模板给大家看一下整体的流程，方便理解
@@ -133,7 +142,7 @@ function createObject() {
   const object = new T.Mesh(
     new T.CubeGeometry(2, 2, 2),
     new T.MeshBasicMaterial({
-      color: 0xf0f0f1,
+      color: 0xf2f30f,
       opacity: 0.77
     })
   );
