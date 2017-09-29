@@ -4,13 +4,13 @@
 
 喜欢的请star一下，谢谢
 
-> 有人说不想看2d的，想看webgl，现在正在写。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)是小儿科的话，那么就直接[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
+> 有人说不想看2d的，想看webgl，现在正在写。。。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)是小儿科的话，那么就直接[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
 
 首先我们在html里面创建`<canvas></canvas>`标签，需要注意的是，width和height都是canvas的dom属性，不要在css上写
 
 然后就是js代码
 
-获取他的dom，而且需要在window变化的时候变化，我们要监听事件，动态改变画布的大小
+获取他的dom，并且我们要监听事件，动态改变画布的大小
 
 ```javascript
 let canvas=document.querySelector('canvas')
@@ -81,7 +81,7 @@ class Parent {
     }
 }
 ```
-解释一下，根据上面的代码，constructor函数在每次生成对象的过程中都会自动生成对象的坐标（x，y），而对于update函数，每次都会更新对象的坐标，draw函数会根据更新的坐标绘制对象.
+解释一下，根据上面的代码，constructor函数在每次生成对象的过程中都会自动生成对象的坐标（x，y），而对于update函数，每次都会更新对象的坐标，draw函数会根据更新的坐标重新绘制对象.
 
 之后我需要`requestAnimationFrame` 函数来实现动画，具体代码
 
@@ -126,7 +126,10 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
 
 将上面的函数放入对象内部，这样我们的一个例子就简单完成了，[效果如下](https://swnb.github.io/canvas_study/demo/canvas.1.2.html)，[代码如下](./canvas/canvas1.2.js)
 
-大家也可以使用arc函数构建圆配上不同的颜色，就可以实现下面的[效果](https://swnb.github.io/canvas_study/demo/point.html)了。
+简单介绍下圆的绘制
+> ctx.arc(x,y,r,start_deg,end_deg，clockwise) 前三个参数确定圆心坐标（x,y）和半径 r  start_deg是起点的角度，end_deg是终点的角度，角度需要使用 Math.PI 来表示，最后一个参数表示是否是顺时针绘制，默认是true
+
+大家可以使用arc函数构建圆配上不同的颜色，实现下面的[效果](https://swnb.github.io/canvas_study/demo/point.html)了。
 
 我们再来看一个复杂的例子
 
@@ -143,7 +146,7 @@ class star{
     }
 }
 ```
-其次，你需要根据这个基本点去绘制这个星的几个边角，数学问题，直接给答案了.
+其次，你需要根据这个基本点去绘制这个星的几个边，数学问题，直接给答案了.
 
 ```javascript            
             ctx.fillStyle = 'red';
