@@ -8,8 +8,6 @@
 
 首先我们在html里面创建`<canvas></canvas>`标签，需要注意的是，width和height都是canvas的dom属性，不要在css上写
 
-然后就是js代码
-
 获取他的dom，并且我们要监听事件，动态改变画布的大小
 
 ```javascript
@@ -127,7 +125,7 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
 将上面的函数放入对象内部，这样我们的一个例子就简单完成了，[效果如下](https://swnb.github.io/canvas_study/demo/canvas.1.2.html)，[代码如下](./canvas/canvas1.2.js)
 
 简单介绍下圆的绘制
-> ctx.arc(x,y,r,start_deg,end_deg，clockwise) 前三个参数确定圆心坐标（x,y）和半径 r  start_deg是起点的角度，end_deg是终点的角度，角度需要使用 Math.PI 来表示，最后一个参数表示是否是顺时针绘制，默认是true
+> ctx.arc(x，y，r，start_deg,end_deg，clockwise) 前三个参数确定圆心坐标（x,y）和半径 r ，start_deg是起点的角度，end_deg是终点的角度，角度需要使用 Math.PI 来表示，最后一个参数表示是否是顺时针绘制，默认是true
 
 大家可以使用arc函数构建圆配上不同的颜色，实现下面的[效果](https://swnb.github.io/canvas_study/demo/point.html)了。
 
