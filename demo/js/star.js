@@ -171,7 +171,7 @@
 
     //render元素
     function update() {
-        ctx.fillStyle = 'rgb(0,0,0)';
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
         ctx.fillRect(0, 0, w, h);
         for (let x of array) {
             x.draw();
