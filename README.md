@@ -4,7 +4,7 @@
 
 喜欢的请star一下，谢谢
 
-> 有人说不想看2d的，想看webgl，现在正在写。。。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas_study/demo/star.html)很简单的话，那么就直接看[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
+> 有人说不想看2d的，想看webgl，现在正在写。。。。还是希望大家先把canvas看完，如果你觉得实现这样一个[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)很简单的话，那么就直接看[webgl的介绍](./webgl.md)好了,笔者能力有限，不对的地方在所难免，我也只是抛砖引玉，希望大家不吝赐教。
 
 ***
 
@@ -94,10 +94,10 @@ function run() {
 run();
 ```
 
-我们先来看看[效果是怎么样的](https://swnb.github.io/canvas_study/demo/canvas.1.0.html)。
+我们先来看看[效果是怎么样的](https://swnb.github.io/canvas-webgl-study/demo/canvas.1.0.html)。
 全部代码在[canvas代码](./canvas/canvas1.0.js)。
 
-我们看到效果并不好，为什么？因为我们每次更新到画布的过程没有清除先前绘制的矩形，所有没有达到我们想要的效果，只要求一个矩形，怎么办？，我们只需要每次绘制画布前清除画布就好了。使用`ctx.clearRect(0,0,w,h)` 从（0,0）到（w，h）清除画布，还要重新开始路径`ctx.beginPath()`让画布重新开始路径，[效果在这里](https://swnb.github.io/canvas_study/demo/canvas.1.1.html)代码更改为[代码](./canvas/canvas1.1.js)
+我们看到效果并不好，为什么？因为我们每次更新到画布的过程没有清除先前绘制的矩形，所有没有达到我们想要的效果，只要求一个矩形，怎么办？，我们只需要每次绘制画布前清除画布就好了。使用`ctx.clearRect(0,0,w,h)` 从（0,0）到（w，h）清除画布，还要重新开始路径`ctx.beginPath()`让画布重新开始路径，[效果在这里](https://swnb.github.io/canvas-webgl-study/demo/canvas.1.1.html)代码更改为[代码](./canvas/canvas1.1.js)
 
 但是上面的方法并不好，因为每次都要清除全部内容，大家可以根据这个做优化，我这里就不写了，每次只清除前面的那一部分内容就好了，但是对于内容变化丰富的画布，那么就需要全部清空了。
 
@@ -124,16 +124,16 @@ _borderLine(x, y, border_x = [40, w - 40], border_y = [40, h - 40]) {
     }
 ```
 
-将上面的函数放入对象内部，这样我们的一个例子就简单完成了，[效果如下](https://swnb.github.io/canvas_study/demo/canvas.1.2.html)，[代码如下](./canvas/canvas1.2.js)
+将上面的函数放入对象内部，这样我们的一个例子就简单完成了，[效果如下](https://swnb.github.io/canvas-webgl-study/demo/canvas.1.2.html)，[代码如下](./canvas/canvas1.2.js)
 
 简单介绍下圆的绘制
 > ctx.arc(x，y，r，start_deg,end_deg，clockwise) 前三个参数确定圆心坐标（x,y）和半径 r ，start_deg是起点的角度，end_deg是终点的角度，角度需要使用 Math.PI 来表示，最后一个参数表示是否是顺时针绘制，默认是true
 
-大家可以使用arc函数构建圆配上不同的颜色，实现下面的[效果](https://swnb.github.io/canvas_study/demo/point.html)了。
+大家可以使用arc函数构建圆配上不同的颜色，实现下面的[效果](https://swnb.github.io/canvas-webgl-study/demo/point.html)了。
 
 我们再来看一个复杂的例子
 
-实现下面的[动画](https://swnb.github.io/canvas_study/demo/star.html)
+实现下面的[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)
 
 这个动画有五角星和雪瓣，我们主要介绍下4角星怎么实现，简单来说，就是使用line连接起来，然后再fill就完成了。我们看看怎么实现吧，首先，你要生成一个基本点属性`position`,这个属性包括了三角形的中心点
 
@@ -165,9 +165,9 @@ class star{
 ```
 解释一下,我们将画布的原点移动到我们的三角形原点右边的那个点，注意是右边的位置，因为我要从这个点开始连线，之后就是一些数学问题，连线，连线，自己分析一下就知道了。然后填充，就好了，上面的只是核心代码。
 
-实现一个4角星的代码在[这里](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/starSigel.js),[效果这里](https://swnb.github.io/canvas_study/demo/starSigel.html)
+实现一个4角星的代码在[这里](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/starSigel.js),[效果这里](https://swnb.github.io/canvas-webgl-study/demo/starSigel.html)
 
-我就不再详细介绍这个[动画](https://swnb.github.io/canvas_study/demo/star.html)怎么实现了，喜欢的朋友可以去这里看我写的[源代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/star.js)，我给了非常详细的注释，如果看不懂，可以提个issues,我会专门去详细的介绍怎么实现这个[动画](https://swnb.github.io/canvas_study/demo/star.html)。
+我就不再详细介绍这个[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)怎么实现了，喜欢的朋友可以去这里看我写的[源代码](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/js/star.js)，我给了非常详细的注释，如果看不懂，可以提个issues,我会专门去详细的介绍怎么实现这个[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)。
 
 后面我回介绍webgl和css3的动画，希望大家喜欢，有不对的地方也希望大家给我提出来
 
