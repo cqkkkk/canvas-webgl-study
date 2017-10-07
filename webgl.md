@@ -120,9 +120,9 @@ function draw() {
     requestAnimationFrame(draw);
 }
 ```
-[整体的代码](https://github.com/swnb/canvas_study/blob/gh-pages/demo/webgl_js/template.js)
+[整体的代码](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/webgl_js/template.js)
 
-[效果在这里](https://swnb.github.io/canvas_study/demo/webgl.html)
+[效果在这里](https://swnb.github.io/canvas-webgl-study/demo/webgl.html)
 
 这里我写了一个大致模板给大家看一下整体的流程，方便理解
 
