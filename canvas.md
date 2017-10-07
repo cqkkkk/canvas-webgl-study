@@ -165,7 +165,7 @@ class star{
 ```
 解释一下,我们将画布的原点移动到我们的三角形原点右边的那个点，注意是右边的位置，因为我要从这个点开始连线，之后就是一些数学问题，连线，连线，自己分析一下就知道了。然后填充，就好了，上面的只是核心代码。
 
-实现一个4角星的代码在[这里](https://github.com/swnb/canvas_study/blob/gh-pages/demo/js/starSigel.js),[效果这里](https://swnb.github.io/canvas-webgl-study/demo/starSigel.html)
+实现一个4角星的代码在[这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/js/starSigel.js),[效果这里](https://swnb.github.io/canvas-webgl-study/demo/starSigel.html)
 
 我就不再详细介绍这个[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)怎么实现了，喜欢的朋友可以去这里看我写的[源代码](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/js/star.js)，我给了非常详细的注释，如果看不懂，可以提个issues,我会专门去详细的介绍怎么实现这个[动画](https://swnb.github.io/canvas-webgl-study/demo/star.html)。
 
