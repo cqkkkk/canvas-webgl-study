@@ -4,11 +4,10 @@
 
 下载这个分支
 ```shell
-git clone -b webpack-template https://github.com/swnb/canvas_study.git
-```
+git clone -b webpack-template https://github.com/swnb/canvas-webgl-study.git
 进入目录
 ```shell
-cd canvas_study
+cd canvas-webgl-study
 ```
 之后修改`index.js`文件，在里面写入你的代码
 
