@@ -1,14 +1,21 @@
 $size = 240px
 $backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
 $rotateTime = 12s
-
-
+@keyframes boxr 
+    0%
+        transform rotateX(-45deg) rotateY(45deg)
+    70%
+        transform rotateX(-45deg) rotateY(405deg)
+    100%
+        transform rotateX(-45deg) rotateY(405deg)
+        
 .container
     position relative
     width $size
     height $size
     margin 120px auto
     transform rotateX(-45deg) rotateY(45deg)
+    animation boxr 5s ease-in-out infinite 1s
     transform-style: preserve-3d
 
     .face

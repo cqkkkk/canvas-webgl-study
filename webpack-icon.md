@@ -79,3 +79,28 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 [这里](./https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/box.stylus)就是整体的`stylus`代码,[这里](./https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/box.stylus.css)就是编译后的css代码,[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/box.html)是整体的效果。
 
 可以看到大致的模型已经出来了。
+
+让它动起来，定义一个keyframes 
+```stylus
+@keyframes boxr 
+    0%
+        transform rotateX(-45deg) rotateY(45deg)
+    70%
+        transform rotateX(-45deg) rotateY(405deg)
+    100%
+        transform rotateX(-45deg) rotateY(405deg)
+```
+这个动画会在旋转一段时间后等待一段时间。形成转动延时的效果
+下面添加 `animation`
+```diff
+.container {
+    position: relative;
+    margin: 120px auto;
+    width: 240px;
+    height: 240px;
+    transform: rotateX(-45deg) rotateY(45deg);
++   animation: boxr 5s ease-in-out infinite 1s;
+    transform-style: preserve-3d;
+}
+```
+得到的整体效果在[这里]()
