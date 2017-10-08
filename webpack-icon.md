@@ -76,4 +76,6 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 +  transform rotateX(-45deg) rotateY(45deg)    
 +  transform-style preserve-3d
 ```
-[这里](./)就是整体的`stylus`代码,[这里](./)就是编译后的css代码
+[这里](./https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/box.stylus)就是整体的`stylus`代码,[这里](./https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/box.stylus.css)就是编译后的css代码,[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/box.html)是整体的效果。
+
+可以看到大致的模型已经出来了。
