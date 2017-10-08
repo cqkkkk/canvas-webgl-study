@@ -1,0 +1,79 @@
+$size = 240px
+$backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
+$rotateTime = 12s
+
+.webpack-icon  
+    position relative
+    width $size
+    height $size
+    margin 120px auto
+    .container
+        position relative
+        width $size
+        height $size
+        margin  auto
+        transform rotateX(-35deg) rotateY(45deg)
+        animation boxr 5s ease-in-out infinite 1s
+        transform-style: preserve-3d
+        .face
+            position absolute
+            width $size
+            height $size
+            border 1px solid #007f80
+            background-color transparent
+            transform-origin 50%
+            backface-visibility hidden
+        .front
+            transform translateZ($size/2)
+
+        .back
+            transform rotateY(180deg) translateZ($size/2)
+
+        .right
+            transform rotateY(90deg) translateZ($size/2)
+
+        .left
+            transform rotateY(-90deg) translateZ($size/2)
+
+        .top
+            transform rotateX(-90deg) translateZ($size/2)
+
+        .bottom
+            transform rotateX(90deg) translateZ($size/2)
+        
+
+    .innerContainer
+        position relative
+        width ($size/2)
+        height ($size/2)
+        margin  auto
+        transform rotateX(-35deg) rotateY(45deg)
+        animation boxr 5s ease-in-out infinite 1s
+        transform-style: preserve-3d
+        .face
+            position absolute
+            width ($size/2)
+            height ($size/2)
+            border 1px solid #007f80
+            background-color transparent
+            transform-origin 50%
+            backface-visibility hidden
+
+        .front
+            transform translateZ($size/2/2)
+
+        .back
+            transform rotateY(180deg) translateZ($size/2/2)
+
+        .right
+            transform rotateY(90deg) translateZ($size/2/2)
+
+        .left
+            transform rotateY(-90deg) translateZ($size/2/2)
+
+        .top
+            transform rotateX(-90deg) translateZ($size/2/2)
+
+        .bottom
+            transform rotateX(90deg) translateZ($size/2/2)
+        
