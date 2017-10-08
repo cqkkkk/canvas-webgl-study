@@ -80,7 +80,7 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 
 可以看到大致的模型已经出来了。
 
-让它动起来，定义一个keyframes 
+现在我们让它动起来，定义一个keyframes 
 ```stylus
 @keyframes boxr 
     0%
@@ -105,19 +105,55 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 ```
 得到的整体效果在[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/box_rotate.html)
 
-```diff
-.container
-    position relative //将元素设置成相对的
-    margin 120px auto       //居中
-    width $size       //设置宽高
-    height $size      
+前面的动画我`仔细`看了下，上面的代码容器`向下旋转的角度`是不对的，官网的角度大概是`36deg`左右，我写的时候认为是`45deg`，`需要注意`，下面的代码是以`36deg`实现的。
 
-+   .insideContainer
-+       position relative //将元素设置成相对的
-+       width $size/2       //设置宽高
-+       height $size/2
-+       
-+       .face
-+         
-    .face   
+下面我们需要创建另外一个容器，可以使用`@extend`，但是为了清晰，我这里重新写一下，我们整理`html`代码，得到下面的代码
+```html
+    <div class='webpack-icon'>
+        <div class='container'>
+            <div class='face front'></div>
+            <div class='face back'></div>
+            <div class='face left'></div>
+            <div class='face right'></div>
+            <div class='face top'></div>
+            <div class='face bottom'></div>
+        </div>
+        <div class='innerContainer'>
+            <div class='face front'></div>
+            <div class='face back'></div>
+            <div class='face left'></div>
+            <div class='face right'></div>
+            <div class='face top'></div>
+            <div class='face bottom'></div>
+        </div>
+    </div>
 ```
+
+除了`webpack-icon`代码,还要将`innerContainer`的size的大小修改成为前者的2分之一，你也可以自定义内部容器的大小。。
+
+```diff
++   .webpack-icon  
++       position relative
++       width $size
++       height $size
++       margin 120px auto
+       .container
+        ...
++       innerContainer
++           position relative
++           width ($size/2)
++           height ($size/2)      
++           ... 
+```
+整体`stylus`代码的[在这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_tmp.stylus),css代码[在这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_tmp.stylus.css),效果[在这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_tmp.html)
+
+可以看到，显示的有两个盒子，但是一个再上，一个在下，我们需要设置下面盒子的`top`值,将top设置成为`-(($size*3)/4)`
+
+> 上面的top值是怎么得到的，数学问题，列个等式`$size-top=($size-$size/2)/2`，解方程，我就不详细解释这个问题了，自己看下就知道了
+
+
+现在，盒子的就在中间了。
+
+我们定义另一个keyframes动画，和之前的keyframes动画方向相反，前面有类似的代码，最后，我们再上色，更换background，这里不多说了，直接看代码吧
+
+最终的结果[看这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_icon.html)，`stylus代码`[看这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_icon.stylus)，`css代码`[看这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_icon.stylus.css)
