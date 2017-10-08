@@ -72,5 +72,8 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
     position relative //将元素设置成相对的
     margin 20px auto       //居中
     width $size       //设置宽高
-    height $size      
+    height $size 
++  transform rotateX(-45deg) rotateY(45deg)    
++  transform-style preserve-3d
 ```
+[这里](./)就是整体的`stylus`代码,[这里](./)就是编译后的css代码
