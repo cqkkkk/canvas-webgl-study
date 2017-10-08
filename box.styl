@@ -1,13 +1,22 @@
 $size = 240px
-$backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
+$outer_background = rgba(126,169,232,.5)
+$inner_background = rgba(16,58,177,.5)
 $rotateTime = 12s
-// @keyframes boxr 
-//     0%
-//         transform rotateX(-35deg) rotateY(45deg)
-//     70%
-//         transform rotateX(-35deg) rotateY(405deg)
-//     100%
-//         transform rotateX(-35deg) rotateY(405deg)
+@keyframes boxrO
+    0%
+        transform rotateX(-35deg) rotateY(45deg)
+    70%
+        transform rotateX(-35deg) rotateY(405deg)
+    100%
+        transform rotateX(-35deg) rotateY(405deg)
+
+@keyframes boxrI
+    0%
+        transform rotateX(-35deg) rotateY(45deg)
+    70%
+        transform rotateX(-35deg) rotateY(-315deg)
+    100%
+        transform rotateX(-35deg) rotateY(-315deg)
 
 .webpack-icon  
     position relative
@@ -20,19 +29,16 @@ $rotateTime = 12s
         height $size
         margin  auto
         transform rotateX(-35deg) rotateY(45deg)
-        animation boxr 5s ease-in-out infinite 1s
+        animation boxrO 5s ease-in-out infinite 1s
         transform-style: preserve-3d
         .face
             position absolute
             width $size
             height $size
             border 1px solid #007f80
-            background-color transparent
-            text-align: center;
-            font-size: 24px;
+            background $outer_background
             transform-origin 50%
-            // backface-visibility hidden
-            // opacity:0.3
+            backface-visibility hidden
 
         .front
             transform translateZ($size/2)
@@ -60,16 +66,14 @@ $rotateTime = 12s
         top -(($size*3)/4)
         margin  auto
         transform rotateX(-35deg) rotateY(45deg)
-        animation boxr 5s ease-in-out infinite 1s
+        animation boxrI 5s ease-in-out infinite 1s
         transform-style: preserve-3d
         .face
             position absolute
             width ($size/2)
             height ($size/2)
             border 1px solid #007f80
-            background-color transparent
-            text-align: center;
-            font-size: 24px;
+            background $inner_background
             transform-origin 50%
             backface-visibility hidden
 
