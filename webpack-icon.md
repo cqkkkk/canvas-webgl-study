@@ -104,3 +104,20 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 }
 ```
 得到的整体效果在[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/box_rotate.html)
+
+```diff
+.container
+    position relative //将元素设置成相对的
+    margin 120px auto       //居中
+    width $size       //设置宽高
+    height $size      
+
++   .insideContainer
++       position relative //将元素设置成相对的
++       width $size/2       //设置宽高
++       height $size/2
++       
++       .face
++         
+    .face   
+```
