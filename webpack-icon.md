@@ -157,3 +157,5 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 我们定义另一个keyframes动画，和之前的keyframes动画方向相反，前面有类似的代码，最后，我们再上色，更换background，这里不多说了，直接看代码吧
 
 最终的结果[看这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_icon.html)，`stylus代码`[看这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_icon.stylus)，`css代码`[看这里](https://github.com/swnb/canvas-webgl-study/blob/gh-pages/demo/css3.html/css/webpack_icon.stylus.css)
+
+> 在webpack的实现上,还是有一些不同的,webpack官网的`dom`使用的是`ul li;,而且将内部的盒子放在了外部盒子的`dom`内部,便于css的重用,这个和我的实现思路不一样;还使用了伪元素,作用好像是为了做背景的修饰;这里就不深入了,感兴趣的朋友可以去看看去官网看看它是怎么实现.希望对大家有帮助,谢谢大家;
