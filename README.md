@@ -11,4 +11,4 @@
     * [webgl学习环境的模板(webpack)](https://github.com/swnb/canvas-webgl-study/tree/webpack-template)
 
 * css3
-    * [webpack-icon学习](./webpack-icon.md)
+    * [webpack-icon实现](./webpack-icon.md)
