@@ -104,3 +104,53 @@ $backgroundColor = radial-gradient(transparent 30%,rgba(5,17,53,.2) 100%)
 }
 ```
 得到的整体效果在[这里](./https://swnb.github.io/canvas-webgl-study/demo/css3.html/box_rotate.html)
+
+前面的动画我仔细看了下，上面的代码容器向下旋转的角度是不对的，官网的角度大概是36deg左右，我写的时候认为是45deg，需要注意，下面的代码是以36deg实现的，不用担心。
+
+下面我们需要创建另外一个容器，可以使用`@extend`，但是为了清晰，我这里重新写一下，我们整理`html`代码，得到下面的代码
+```html
+    <div class='webpack-icon'>
+        <div class='container'>
+            <div class='face front'></div>
+            <div class='face back'></div>
+            <div class='face left'></div>
+            <div class='face right'></div>
+            <div class='face top'></div>
+            <div class='face bottom'></div>
+        </div>
+        <div class='innerContainer'>
+            <div class='face front'></div>
+            <div class='face back'></div>
+            <div class='face left'></div>
+            <div class='face right'></div>
+            <div class='face top'></div>
+            <div class='face bottom'></div>
+        </div>
+    </div>
+```
+
+除了`webpack-icon`代码,还要将`innerContainer`的size的大小修改成为前者的2分之一，你也可以自定义内部容器的大小。。
+
+```diff
++   .webpack-icon  
++       position relative
++       width $size
++       height $size
++       margin 120px auto
+       .container
+        ...
++       innerContainer
++           position relative
++           width ($size/2)
++           height ($size/2)      
++           ... 
+```
+整体`stylus`代码的[在这里](),css代码[在这里](),效果[在这里]()
+
+可以看到，显示的有两个盒子，但是一个再上，一个在下，我们设置下面盒子的`top`值,将top设置成为`-(($size*3)/4)`
+
+> 上面的top值是怎么得到的，数学问题，列个等式`$size-top=($size-$size/2)/2`，解方程，我就不详细解释这个问题了，自己看下就知道了
+
+现在，盒子的就在中间了，
+
+

@@ -1,49 +1,93 @@
 $size = 240px
 $backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
 $rotateTime = 12s
-@keyframes boxr 
-    0%
-        transform rotateX(-45deg) rotateY(45deg)
-    70%
-        transform rotateX(-45deg) rotateY(405deg)
-    100%
-        transform rotateX(-45deg) rotateY(405deg)
-        
-.container
+// @keyframes boxr 
+//     0%
+//         transform rotateX(-35deg) rotateY(45deg)
+//     70%
+//         transform rotateX(-35deg) rotateY(405deg)
+//     100%
+//         transform rotateX(-35deg) rotateY(405deg)
+
+.webpack-icon  
     position relative
     width $size
     height $size
     margin 120px auto
-    transform rotateX(-45deg) rotateY(45deg)
-    animation boxr 5s ease-in-out infinite 1s
-    transform-style: preserve-3d
-
-    .face
-        position absolute
+    .container
+        position relative
         width $size
         height $size
-        border 1px solid #007f80
-        background $backgroundColor
-        text-align: center;
-        font-size: 24px;
-        transform-origin 50%
-        backface-visibility hidden
+        margin  auto
+        transform rotateX(-35deg) rotateY(45deg)
+        animation boxr 5s ease-in-out infinite 1s
+        transform-style: preserve-3d
+        .face
+            position absolute
+            width $size
+            height $size
+            border 1px solid #007f80
+            background-color transparent
+            text-align: center;
+            font-size: 24px;
+            transform-origin 50%
+            // backface-visibility hidden
+            // opacity:0.3
 
-    .front
-        transform translateZ($size/2)
+        .front
+            transform translateZ($size/2)
 
-    .back
-        transform rotateY(180deg) translateZ($size/2)
+        .back
+            transform rotateY(180deg) translateZ($size/2)
 
-    .right
-        transform rotateY(90deg) translateZ($size/2)
+        .right
+            transform rotateY(90deg) translateZ($size/2)
 
-    .left
-        transform rotateY(-90deg) translateZ($size/2)
+        .left
+            transform rotateY(-90deg) translateZ($size/2)
 
-    .top
-        transform rotateX(-90deg) translateZ($size/2)
+        .top
+            transform rotateX(-90deg) translateZ($size/2)
 
-    .bottom
-        transform rotateX(90deg) translateZ($size/2)
-    
+        .bottom
+            transform rotateX(90deg) translateZ($size/2)
+        
+
+    .innerContainer
+        position relative
+        width ($size/2)
+        height ($size/2)
+        top -(($size*3)/4)
+        margin  auto
+        transform rotateX(-35deg) rotateY(45deg)
+        animation boxr 5s ease-in-out infinite 1s
+        transform-style: preserve-3d
+        .face
+            position absolute
+            width ($size/2)
+            height ($size/2)
+            border 1px solid #007f80
+            background-color transparent
+            text-align: center;
+            font-size: 24px;
+            transform-origin 50%
+            backface-visibility hidden
+
+        .front
+            transform translateZ($size/2/2)
+
+        .back
+            transform rotateY(180deg) translateZ($size/2/2)
+
+        .right
+            transform rotateY(90deg) translateZ($size/2/2)
+
+        .left
+            transform rotateY(-90deg) translateZ($size/2/2)
+
+        .top
+            transform rotateX(-90deg) translateZ($size/2/2)
+
+        .bottom
+            transform rotateX(90deg) translateZ($size/2/2)
+        
