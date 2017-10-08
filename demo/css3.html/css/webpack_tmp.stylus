@@ -1,22 +1,13 @@
 $size = 240px
-$outer_background = rgba(126,169,232,.5)
-$inner_background = rgba(16,58,177,.5)
+$backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
 $rotateTime = 12s
-@keyframes boxrO
+@keyframes boxr 
     0%
         transform rotateX(-35deg) rotateY(45deg)
     70%
         transform rotateX(-35deg) rotateY(405deg)
     100%
         transform rotateX(-35deg) rotateY(405deg)
-
-@keyframes boxrI
-    0%
-        transform rotateX(-35deg) rotateY(45deg)
-    70%
-        transform rotateX(-35deg) rotateY(-315deg)
-    100%
-        transform rotateX(-35deg) rotateY(-315deg)
 
 .webpack-icon  
     position relative
@@ -29,14 +20,14 @@ $rotateTime = 12s
         height $size
         margin  auto
         transform rotateX(-35deg) rotateY(45deg)
-        animation boxrO 5s ease-in-out infinite 1s
+        animation boxr 5s ease-in-out infinite 1s
         transform-style: preserve-3d
         .face
             position absolute
             width $size
             height $size
             border 1px solid #007f80
-            background $outer_background
+            background-color transparent
             transform-origin 50%
             backface-visibility hidden
 
@@ -63,17 +54,16 @@ $rotateTime = 12s
         position relative
         width ($size/2)
         height ($size/2)
-        top -(($size*3)/4)
         margin  auto
         transform rotateX(-35deg) rotateY(45deg)
-        animation boxrI 5s ease-in-out infinite 1s
+        animation boxr 5s ease-in-out infinite 1s
         transform-style: preserve-3d
         .face
             position absolute
             width ($size/2)
             height ($size/2)
             border 1px solid #007f80
-            background $inner_background
+            background-color transparent
             transform-origin 50%
             backface-visibility hidden
 
