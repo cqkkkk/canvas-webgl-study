@@ -2,6 +2,8 @@
 
 进入webpack的[`官网`](http://webpack.github.io/)，可以看到它的图标,一开始我以为是`webgl`写的，其实只是`css3`实现的，这里教大家怎么使用`css3`实现这样一个动画
 
+效果在[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_icon.html)
+
 > 强烈建议没有`css3 3d`基础的朋友看[张鑫旭的教程](http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/)
 
 我们先创建一个盒子`container`,盒子内部由6个`div`组成，分别表示盒子的6个表面.
