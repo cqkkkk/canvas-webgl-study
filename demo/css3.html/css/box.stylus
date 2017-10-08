@@ -1,0 +1,42 @@
+$size = 240px
+$backgroundColor = radial-gradient(transparent 30%,rgba(8,17,53,.2) 100%)
+$rotateTime = 12s
+
+
+.container
+    position relative
+    width $size
+    height $size
+    margin 120px auto
+    transform rotateX(-45deg) rotateY(45deg)
+    transform-style: preserve-3d
+
+    .face
+        position absolute
+        width $size
+        height $size
+        border 1px solid #007f80
+        background $backgroundColor
+        text-align: center;
+        font-size: 24px;
+        transform-origin 50%
+        backface-visibility hidden
+
+    .front
+        transform translateZ($size/2)
+
+    .back
+        transform rotateY(180deg) translateZ($size/2)
+
+    .right
+        transform rotateY(90deg) translateZ($size/2)
+
+    .left
+        transform rotateY(-90deg) translateZ($size/2)
+
+    .top
+        transform rotateX(-90deg) translateZ($size/2)
+
+    .bottom
+        transform rotateX(90deg) translateZ($size/2)
+    
