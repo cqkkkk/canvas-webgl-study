@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <style  type="text/css">
+        ul{
+            margin-left:auto;
+        }
+        ul li{transition: background-color 2s linear;
+            background-color: #c3eefd;
+            list-style: none;
+            border-radius: 30px 30px 0 0;
+            border:3px dashed burlywood;
+            border-top:3px solid beige;
+            box-shadow:3px -3px 5px orange;
+            margin: 30px 5px 0 0;
+            float:left;
+            padding:20px;
+        }
+        ul li a{
+            transition:background-color 2s ease;
+            padding:10px;
+            outline:none;
+            font-size: 30px;
+            color:orange;
+            border-radius: 30px;
+            background-color:cadetblue;
+            text-decoration:none;
+            font-family:Nimbus Sans L,serif;
+            font-weight: bold;
+        }
+
+        ul li:hover{
+            background-color:#cccccc;
+        }
+        ul li a:hover{
+            background:burlywood;
+            color:whitesmoke;
+            font-weight:bolder;
+        }
+        p{  display:inline;
+            margin: 30px;
+            padding:10px;
+            border:3px solid lightgoldenrodyellow;
+            font-size:15px;
+            border-radius: 50px;
+        }
+    </style>
+    <title>Table</title>
+</head>
+<body style="margin-top:0;background-color: #b3d4fc" onload="startload()">
+<script>
+    function startload() {
+        for (i=1;i<=5;i++) {
+            var x="p"+String(i);
+            var z = document.getElementById(x);
+            z.style.display = "none";
+        }
+    }
+    function sp(x){
+        var g=document.getElementById(x);
+        if (g.style.display=="inline"){
+            g.setAttribute("style","display:none");
+        }
+        else if (g.style.display=="none"){
+            g.setAttribute("style","display:inline");
+        }
+        else{
+            alert("something wrong")
+        }
+    }
+</script>
+<ul class="place">
+    <li><a onclick="sp('p1');">Monday</a><div id="p1" ><p>下午第一节和第二节日语</p></div></li>
+    <li><a onclick="sp('p2');">Tuesday</a><div id="p2" ><p>上午1-2节英美散文</p><p>上午3-4节汉语翻译</p><p>下午1-2节语言导论</p></div></li>
+    <li><a onclick="sp('p3');">Wednesday</a><div id="p3"><p>上午1-2节口译</p><p>上午3-4节欧洲文化入门</p></div></li>
+    <li><a onclick="sp('p4');">Thursday</a><div id="p4" ><p>上午1-2节英美散文</p><p>上午3-4节口译</p><p>下午1-2节写作</p><p>下午3-4节英语文导论</p></div></li>
+    <li><a onclick="sp('p5');">Friday</a><div id="p5"><p>上午3-4节日语</p></div></li>
+</ul>
+</body>
+</html>

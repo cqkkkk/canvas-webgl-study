@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>loading</title>
+    <link rel="stylesheet" href="./css/loading.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="outer">
+            <div id="outerline"></div>
+            <div id="bottom-left"></div>
+            <div id="top-right"></div>
+            <div id="bottom-right"></div>
+            <div id="top-left"></div>
+        </div>
+        <div id="bottom">
+            <button>pause</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var count = 1;
+            $("button").click(function () {
+                if (count === 1) {
+                    count = 0;
+                    $("#outer").children().css("animation-play-state", "paused");
+                    $(this).animate({ "font-size": "27px" }, 200).animate({ "font-size": "25px" }, 200).text('resume');
+                }
+                else if (count === 0) {
+                    count = 1;
+                    $("#outer").children().css("animation-play-state", "running");
+                    $(this).animate({ "font-size": "27px" }, 400).animate({ "font-size": "25px" }, 400).text('pause');
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
