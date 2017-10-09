@@ -2,7 +2,7 @@
 
 进入webpack的[官网](http://webpack.github.io/)，可以看到它的图标,一开始我以为是`webgl`写的，其实只是`css3`实现的，这里教大家怎么使用`css3`实现这样一个动画
 
-效果在[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_icon.html),和官网的有点差异,我把`backface-visibility`设置成了`hidden`
+效果在[这里](https://swnb.github.io/canvas-webgl-study/demo/css3.html/webpack_icon.html),和官网的有点差异,因为我把backface-visibility设置成了hidden,把backface-visiblity注释掉再修改下border的颜色就和官网的差不多了,看起来有点晕晕的..
 
 > 强烈建议没有`css3 3d`基础的朋友看[张鑫旭的教程](http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/)
 
