@@ -12,3 +12,4 @@
 
 * css3
     * [webpack-icon实现](./webpack-icon.md)
+    * [loading-page实现](https://github.com/swnb/canvas-webgl-study/tree/loading)
